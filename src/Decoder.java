@@ -19,6 +19,7 @@ public class Decoder {
 		System.out.println("Enter your message below. You may only use \",\", \".\", \"!\", \"?\", \"'\", and \"-\".");
 		Scanner userWordIn = new Scanner(System.in);
 		String wordIn = userWordIn.nextLine();
+		wordIn += "";
 		while(wordIn.length() > 1)
 		{
 			boolean found = false;

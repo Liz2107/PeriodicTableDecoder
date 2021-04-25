@@ -38,9 +38,9 @@ public class Database
 		singles.add(new Element("carbon", "c"));
 		singles.add(new Element("nitrogen", "n"));
 		singles.add(new Element("oxygen", "o"));
-		singles.add(new Element("flourine", "f"));
+		singles.add(new Element("fluorine", "f"));
 		singles.add(new Element("phosphorus", "p"));
-		singles.add(new Element("sulfer", "s"));
+		singles.add(new Element("sulfur", "s"));
 		singles.add(new Element("potassium", "k"));
 		singles.add(new Element("vanadium", "v"));
 		singles.add(new Element("yttrium", "y"));
