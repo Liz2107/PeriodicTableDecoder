@@ -30,6 +30,8 @@ public class Database
 		leftovers.add(new Element("'", "'"));
 		leftovers.add(new Element(" ", " "));
 		leftovers.add(new Element("", " "));
+		leftovers.add(new Element("(", "("));
+		leftovers.add(new Element(")", ")"));
 		
 		singles.add(new Element("hydrogen", "h"));
 		singles.add(new Element("boron", "b"));

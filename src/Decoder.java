@@ -21,6 +21,7 @@ public class Decoder {
 		String wordIn = userWordIn.nextLine();
 		while(wordIn.length() > 1)
 		{
+			boolean found = false;
 			for(int i = 0; i < Database.doubles.size(); i++)
 			{
 				if(wordIn.substring(0, 2).toLowerCase().equals(Database.doubles.get(i).getSymbol()))
@@ -29,35 +30,50 @@ public class Decoder {
 					wordIn = wordIn.substring(2);
 					if(wordIn.length() < 2)
 						i += 500;
-				}
-			}
-			for(int j = 0; j < Database.singles.size(); j++)
-			{
-				if(wordIn.substring(0, 1).toLowerCase().equals(Database.singles.get(j).getSymbol()))
-				{
-					System.out.print(Database.singles.get(j).getName() + " ");
-					wordIn = wordIn.substring(1);
-					if(wordIn.length() < 1)
-						j += 500;
+					continue;
 				}
 			}
 			if(wordIn.length() < 1)
 			{
-				//nothing
+				continue;
 			}
-			else
+			if(!found)
 			{
-			for(int k = 0; k < Database.leftovers.size(); k++)
-				{				
-					if(wordIn.substring(0, 1).toLowerCase().equals(Database.leftovers.get(k).getSymbol()))
+				for(int j = 0; j < Database.singles.size(); j++)
+				{
+					if(wordIn.substring(0, 1).toLowerCase().equals(Database.singles.get(j).getSymbol()))
 					{
-						if(Database.leftovers.get(k).getName().equals(" ")) 
-							System.out.print(Database.leftovers.get(k).getName());
-						else
-							System.out.print(Database.leftovers.get(k).getName() + " ");
+						found = true;
+						System.out.print(Database.singles.get(j).getName() + " ");
 						wordIn = wordIn.substring(1);
 						if(wordIn.length() < 1)
-							k += 500;
+							j += 500;
+						continue;
+					}
+				}
+			}
+			if(!found)
+			{
+				if(wordIn.length() < 1)
+				{
+					//nothing
+				}
+				else
+				{
+					for(int k = 0; k < Database.leftovers.size(); k++)
+					{				
+						if(wordIn.substring(0, 1).toLowerCase().equals(Database.leftovers.get(k).getSymbol()))
+						{
+							if(Database.leftovers.get(k).getName().equals(" ")) 
+								System.out.print(Database.leftovers.get(k).getName());
+							else
+								System.out.print(Database.leftovers.get(k).getName() + " ");
+							wordIn = wordIn.substring(1);
+							k+= 500;
+							if(wordIn.length() < 1)
+								k += 500;
+							
+						}
 					}
 				}
 			}
